@@ -43,6 +43,10 @@ This is the Pytorch implement of [CVPR 2016 paper on Context Encoders](http://cs
 ```Shell
 python train.py --cuda --wtl2 0.999 --niter 200
 ```
+with jittering
+```Shell
+python train.py [options ...] --jittering
+```
 
 3. Test
 
