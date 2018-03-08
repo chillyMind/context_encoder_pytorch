@@ -98,7 +98,7 @@ def main():
         transform = transforms.Compose([transforms.Resize(opt.imageSize),
                                         transforms.CenterCrop(opt.imageSize),
                                         transforms.ToTensor(),
-                                        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+                                        transforms.Normalize((0.0, 0.0, 0.0), (1.0, 1.0, 1.0))]) #none normalize
         dataset = dset.ImageFolder(root=opt.dataroot, transform=transform )
     assert dataset
     dataloader = torch.utils.data.DataLoader(dataset, batch_size=opt.batchSize,
@@ -183,15 +183,15 @@ def main():
         if opt.jittering:
             jitterSizeW = int(opt.imageSize/5*randwf)
             jitterSizeH = int(opt.imageSize/5*randhf)
-            print("jittering: W_",jitterSizeW," H_",jitterSizeH)
+            print("jittering : W > ",jitterSizeW," H >",jitterSizeH)
         else :
             jitterSizeW = 0
             jitterSizeH = 0
         for i, data in enumerate(dataloader, 0):
             real_cpu, _ = data
             real_center_cpu = real_cpu[:,:,
-                                       int(opt.imageSize/4+jitterSizeW):int(opt.imageSize/4)+int(opt.imageSize/2)+int(jitterSizeW),
-                                       int(opt.imageSize/4+jitterSizeH):int(opt.imageSize/4)+int(opt.imageSize/2)+int(jitterSizeH)]
+                                       int(opt.imageSize/4+jitterSizeW):int(opt.imageSize/4+opt.imageSize/2+jitterSizeW),
+                                       int(opt.imageSize/4+jitterSizeH):int(opt.imageSize/4+opt.imageSize/2+jitterSizeH)]
             batch_size = real_cpu.size(0)
             input_real.data.resize_(real_cpu.size()).copy_(real_cpu)
             input_cropped.data.resize_(real_cpu.size()).copy_(real_cpu)
