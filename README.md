@@ -2,7 +2,7 @@
 
 This is the Pytorch implement of [CVPR 2016 paper on Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/)
 
-![corrupted image size](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png){:height="500px" width="500px"}
+<img src="https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png" width="40%">
 ![result image size](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/recon_center_samples.png){:height="500px" width="500px"}
 ### 1) Semantic Inpainting Demo
 
