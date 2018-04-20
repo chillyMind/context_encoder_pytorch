@@ -66,6 +66,12 @@ python train.py [options ...] --jittering
     
     dataset/pngdata/subdirectory21/some_images
     ...
+    
+    ### Alpha map img constraint
+    The images are cosist of black and white pixels.
+    black for being not cropped, white for being cropped.
+    ex)
+    ![pngsample](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/png%20sample.jpg)
 
 2. Train (noneSquare_train_alphamap.ipynb)
     When you in first trainning, set and remvoe below annotations 
