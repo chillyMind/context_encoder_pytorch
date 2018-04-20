@@ -103,3 +103,5 @@ class opt():
   self.testimg = 'IMG_TO_TEST'
   ...
 ```
+![inputS](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/single_test_image(cropped)_rabbit_cropped.png)
+![resultS](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/single_test_image(mask)__rabbit_cropped.png)
