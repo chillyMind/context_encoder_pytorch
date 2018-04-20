@@ -2,8 +2,8 @@
 
 This is the Pytorch implement of [CVPR 2016 paper on Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/)
 
-![corrupted](https://github.com/BoyuanJiang/context_encoder_pytorch/blob/master/val_cropped_samples.png)
-![result](https://github.com/BoyuanJiang/context_encoder_pytorch/blob/master/val_recon_samples.png)
+![corrupted](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png)
+![result](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/recon_center_samples.png)
 ### 1) Semantic Inpainting Demo
 
 1. Install PyTorch http://pytorch.org/
@@ -39,7 +39,7 @@ This is the Pytorch implement of [CVPR 2016 paper on Context Encoders](http://cs
     **Note**:For Google Policy,Paris StreetView Dataset is not public data,for research using please contact with [pathak22](https://github.com/pathak22).
     You can also use [The Paris Dataset](http://www.robots.ox.ac.uk/~vgg/data/parisbuildings/) to train your model
 
-2. Train
+2. Train (alpha map cropped isnt implemented in this method)
 ```Shell
 python train.py --cuda --wtl2 0.999 --niter 200
 ```
@@ -53,3 +53,55 @@ python train.py [options ...] --jittering
     This step is similar to [Semantic Inpainting Demo](#1-semantic-inpainting-demo)
 
     
+### 3) Train on your own dataset with alpha map cropped (by ipython)
+1. Build dataset
+    Put your images under dataset/train,all images should under subdirectory
+
+    dataset/train/subdirectory1/some_images
+    
+    dataset/train/subdirectory2/some_images
+    ...
+    
+    dataset/pngdata/subdirectory1/some_images
+    
+    dataset/pngdata/subdirectory21/some_images
+    ...
+
+2. Train (noneSquare_train_alphamap.ipynb)
+    When you in first trainning, set and remvoe below annotations 
+```Shell
+class opt():
+  def __init__(self):
+  ...
+  ...
+        self.netG=''
+        self.netD=''
+        #self.netG='...'
+        #self.netG='...'
+  ...
+```
+
+    When you in first trainning, set and remove below annotations
+```Shell
+class opt():
+  def __init__(self):
+  ...
+  ...
+
+        #self.netG=''
+        #self.netD=''
+        self.netG='...'
+        self.netG='...'
+  ...
+```
+
+3. Test (noneSquare_test_singleimg.ipynb)
+```Shell
+class opt():
+  def __init__(self):
+  ...
+  self.testimg = 'IMG_TO_TEST'
+  ...
+```
+![inputS](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/single_test_image(cropped)_rabbit_cropped.png)
+![resultS](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/single_test_image(mask)__rabbit_cropped.png)
