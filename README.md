@@ -2,8 +2,8 @@
 
 This is the Pytorch implement of [CVPR 2016 paper on Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/)
 
-![corrupted](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png)
-![result](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/recon_center_samples.png)
+![corrupted](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png =500x500)
+![result](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/recon_center_samples.png =500x500)
 ### 1) Semantic Inpainting Demo
 
 1. Install PyTorch http://pytorch.org/
@@ -71,7 +71,7 @@ python train.py [options ...] --jittering
     The images are cosist of black and white pixels.
     black for being not cropped, white for being cropped.
     ex)
-    ![pngsample](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/png%20sample.jpg)
+    ![pngsample](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/png%20sample.jpg =100x100)
 
 2. Train (noneSquare_train_alphamap.ipynb)
     When you in first trainning, set and remvoe below annotations 
