@@ -2,8 +2,8 @@
 
 This is the Pytorch implement of [CVPR 2016 paper on Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/)
 
-![corrupted](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png |=500x500)
-![result](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/recon_center_samples.png |=500x500)
+![corrupted](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/cropped_samples.png){:height="500px" width="500px"}
+![result](https://github.com/chillyMind/context_encoder_pytorch/blob/master/blob/recon_center_samples.png){:height="500px" width="500px"}
 ### 1) Semantic Inpainting Demo
 
 1. Install PyTorch http://pytorch.org/
